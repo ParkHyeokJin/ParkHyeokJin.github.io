@@ -1,16 +1,16 @@
-title: John Smith
+title: All Creator Blog
 description: My Personal Blog
-author: John Smith
+author: Hyeok Jin Park
 logo: /hcz-jekyll-blog/static/img/avatar.png
-github: https://github.com/codeasashu
+github: https://github.com/ParkHyeokJin
 about: Freelance developer
 
-baseurl: ""
-url: ""
+baseurl: "https://parkhyeokjin.github.io/"
+url: "https://parkhyeokjin.github.io/"
 
 allowsearch: true
 
-disqus_shortname: aboutashu
+disqus_shortname: AllCreator
 google_analytics: UA-72862926-1
 
 share:
