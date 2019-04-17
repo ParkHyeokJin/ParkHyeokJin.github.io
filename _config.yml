@@ -3,7 +3,7 @@ description: My Personal Blog
 author: Hyeok Jin Park
 logo: /hcz-jekyll-blog/static/img/avatar.png
 github: https://github.com/ParkHyeokJin
-about: Freelance developer
+about: Java developer
 
 baseurl: "https://parkhyeokjin.github.io/"
 url: "https://parkhyeokjin.github.io/"
