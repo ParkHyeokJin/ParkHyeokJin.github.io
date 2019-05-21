@@ -19,8 +19,8 @@ subtitle: "A free HTML5 agency template"
 url: "https://parkhyeokjin.github.io/" # the base hostname & protocol for your site
 # baseurl: "/the/subpath/of/your/site" # Set this value to "" if you want your site to be root
 baseurl: "/parkhyeokjin.github.io"
-cover: "/assets/cover.png"
-logo: "/assets/logo.png"
+cover: "/parkhyeokjin.github.io/assets/cover.png"
+logo: "/parkhyeokjin.github.io/assets/logo.png"
 
 # Build settings
 markdown: kramdown
