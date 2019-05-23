@@ -20,9 +20,11 @@ permalink: /blog/
 
 <!-- HTML elements for search -->
 <div id="search-container">
-	<span class="icon"><i class="fa fa-search"></i></span>
-    <span class="search-input"><input type="text" id="search-input" size="60" placeholder="Search......." /></span>
-    <ul id="results-container"></ul>
+	<div id="search-body">
+		<span class="search-icon"><i class="fa fa-search"></i></span>
+	    <span class="search-input"><input type="text" id="search-input" size="50%" placeholder="Search......." /></span>
+	    <ul id="results-container"></ul>
+	</div>
 </div>
 {% for post in site.posts %}
 <div class="post-area">

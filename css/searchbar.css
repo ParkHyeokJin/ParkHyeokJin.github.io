@@ -1,9 +1,15 @@
 #search-container{
+	position: relative;
+	width: 100%;
 	padding-top: 2%;
-	padding-left: 70%;
+	overflow: hidden;
+	float: right;
+}
+
+#search-body{
+	float: right;
 }
 
 #results-container{
-	list-style-type : disc;
 	padding-left:6%;
 }

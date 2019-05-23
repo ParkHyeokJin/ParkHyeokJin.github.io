@@ -3,14 +3,17 @@ layout: post
 title: jekyll 을 이용한 blog 만들기
 date:   2019-05-20 09:00:00
 categories: others
+comments: true 
 ---
 
-# jekyll을 이용하여 나만의 git blog 만들기
-jekyll 을 이용해서 나만의 블로그를 만들어 포스팅을 해보자.
-이 포스트에서는 퀵 셋팅을 할 수 있도록 내가 셋팅 했던 순서를 정리 했다.  
-
-
-## jekyll이 뭐지?   <small>[jekyll 공식사이트 이동하기](https://jekyllrb-ko.github.io)</small>
+jekyll을 이용하여 나만의 git blog 만들기
+===================================
+jekyll 을 이용해서 나만의 블로그를 만들어 보자.
+이 포스트에서는 빠르게 jekyll을 이용하여 사이트를 생성 할 수 있도록 정리 하였다.  
+자세한 사항은 jekyll 공식 사이트에서 확인 하기 바란다.<small>[jekyll 공식사이트 이동하기](https://jekyllrb-ko.github.io)</small>    
+  
+  
+## jekyll?   
 jekyll은 아주 심플하고 블로그 지향 적인 사이트 생성기이다. 텍스트(마크다운) 파일로 컨텐츠를 작성하고 폴더로 관리한다.  
 그다름 Liquid 기능이 추가된 html 템플릿들을 함께 합쳐서 어떤 서버에서도 올바르게 작동하는 정적 사이트를 만들 수 있다. 
  
@@ -19,29 +22,31 @@ jekyll은 아주 심플하고 블로그 지향 적인 사이트 생성기이다.
 jekyll 공식 홈페이지에서는 윈도우즈에서는 공식적으로 지원되지 않는 플랫폼이라고는 하지만
 동작에 있어 문제가 되지는 않는듯 하다.  
 
-
 1) Ruby Installer  
-Jekyll 을 이용하기 위해서는 RubyInstaller 를 이용하여 내 컴퓨터에 Ruby를 설치 해야 한다.   
-	+ 설치 링크 : [Ruby Installer](https://rubyinstaller.org/downloads/)  
-	+ 설치 방법  
-		* 설치 링크에서 해당 파일을 다운 받아서 설치 한다.  
-		* 윈도우 환경 변수 PATH를 등록한다.  
-	+ 설치 확인 방법  
- 		* 명령프롬프트에서 `ruby -v` and `gem -v` 로 확인 할 수 있다.
-
+Jekyll 을 이용하기 위해서는 RubyInstaller 를 이용하여 내 컴퓨터에 Ruby를 설치 해야 한다.  
+ 
+- 설치 링크 : [Ruby Installer](https://rubyinstaller.org/downloads/)  
+- 설치 방법    
+	* 설치 링크에서 해당 파일을 다운 받아서 설치 한다.  
+	* 윈도우 환경 변수 PATH를 등록한다.  
+* 설치 확인 방법    
+	* 명령프롬프트에서 `ruby -v` and `gem -v` 로 확인 할 수 있다.
+  
 2) jekyll 테마를 다운 받는다.
-jekyll 테마 사이트에서는 이쁘고 많은 종류의 사이트 테마를 MIT 라이센스로 제공 되고 있다.  
-	+ jekyll 테마 사이트 : [jekyll 테마 사이트](http://jekyllthemes.org/)
+jekyll 테마 사이트에서는 이쁘고 많은 종류의 사이트 테마를 MIT 라이센스로 제공 되고 있다.
+  
+* jekyll 테마 사이트 : [jekyll 테마 사이트](http://jekyllthemes.org/)
 	
-3) jekyll & bundler 설치  
-	+ jekyll 테마 사이트에서 다운받은 테마의 폴더로 이동한다.  
-	+ CMD(명령프롬프트) 창을 열고 아래 명령어를 입력 한다.    
-	`gem install jekyll bundler`
+3) jekyll & bundler 설치
+  
+* jekyll 테마 사이트에서 다운받은 테마의 폴더로 이동한다.  
+* CMD(명령프롬프트) 창을 열고 아래 명령어를 입력 한다.    
+> `gem install jekyll bundler`
 
 4) 웹 사이트로 구동 하기.  
-	+ CMD(명령프롬프트) 창을 열고 아래 명령어를 입력 한다.  
-	`bundle exec jekyll serve`  
-	+ 브라우저로 http://localhost:4000 에 접속
+* CMD(명령프롬프트) 창을 열고 아래 명령어를 입력 한다.  
+> `bundle exec jekyll serve`  
+* 브라우저로 http://localhost:4000 에 접속
 
 ## 디렉토리 구조
 매우 간단한 방법으로 나만의 jekyll 사이트가 생성 된 것을 보았다.
