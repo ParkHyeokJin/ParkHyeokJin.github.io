@@ -14,7 +14,7 @@ keep_files:
 
 
 # Site settings
-title: Airspace
+title: HyeokJin blog
 subtitle: "A free HTML5 agency template"
 url: "https://localhost:4000" # the base hostname & protocol for your site
 # baseurl: "/the/subpath/of/your/site" # Set this value to "" if you want your site to be root
@@ -23,7 +23,10 @@ cover: "/assets/cover.png"
 logo: "/assets/logo.png"
 
 # Build settings
-markdown: kramdown
+# markdown: kramdown
+markdown: redcarpet
+redcarpet:
+ extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
 # Google analytics
 # ga_tracking_id: "UA-XXXX-1"
