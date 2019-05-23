@@ -4,6 +4,7 @@ title: Blog
 permalink: /blog/
 ---
 <!-- Slider Start -->
+
 <section id="global-header">
   <div class="container">
     <div class="row">
@@ -16,6 +17,13 @@ permalink: /blog/
     </div>
   </div>
 </section>
+
+<!-- HTML elements for search -->
+<div id="search-container">
+	<span class="icon"><i class="fa fa-search"></i></span>
+    <span class="search-input"><input type="text" id="search-input" size="60" placeholder="Search......." /></span>
+    <ul id="results-container"></ul>
+</div>
 {% for post in site.posts %}
 <div class="post-area">
   <a href="{{ post.url | prepend: site.baseurl }}" class="bold">{{ post.title }}</a>
@@ -25,3 +33,15 @@ permalink: /blog/
   </p>
 </div>
 {% endfor %}
+<script type="text/javascript">
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No search Posts',
+    limit: 10,
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+</script>
