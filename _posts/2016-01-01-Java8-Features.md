@@ -1,68 +1,204 @@
 ---
 layout: post
-title: Java11
+title: Java8의 8가지 새로운 기능
 date:   2016-01-11 10:00:00
 categories: others
 comments: true 
 ---
 
-Java11
+Java8의 8가지 새로운 기능
 -------------------------
 
-### JDK11 발표
-JDK11은 2018년 9월 25일 발표됨.
+### 2014년 JDK 8 (Java SE 8, JDK 8, JRE 8) 발표
+2014년 JDK 8 Lambda 추가
+2011년 JDK 1.7이 나온 이후로 3년이 업데이트에 3년이 걸렸습니다. 하지만 1.7에서 구현하지 못했던 많은 변화들이 1.8에 담기게 됩니다.
 
 ### 변화된 기능
-1) Nest-Based Access Control
 
-2) Dynamic Class-File Constants
+1) Lambda Expression
+- 기본 구분
 
-3) Improve Aarch64 Intrinsics
+~~~
+(argtype arg...) -> { return some expression.. probably using these arguments }
+~~~
 
-4) Epsilon: A No-Op Garbage Collector
+- Thread 사용 변화
 
-5) Remove the Java EE and CORBA Modules
+~~~
+Runnable oldRunner = new Runnable(){
+    public void run(){
+        System.out.println("I am running");
+    }
+};
 
-6) HTTP Client (Standard)
+Runnable java8Runner = () ->{
+    System.out.println("I am running");
+};
+~~~
 
-7) Local-Variable Syntax for Lambda Parameters
-람다 식의 형식 매개 변수를 선언할때 `var` 를 사용 할 수 있다.
+- Lambdas 사용 할 경우 형식 유추 가능(by scala)
+ : Comparator 메소드가 구면 될 때 a, b 유형(이 경우 String, Comparator 인터페이스에서 유추)이 유추됨.
 
-> (var x, var y) -> x.process(y)
-> (x, y) -> x.process(y)
+~~~
+Comparator c = (a, b) -> Integer.compare(a.length(), b.length());
+~~~
 
-암시적으로 형식화 된 람다 식은 var 모든 형식 매개 변수 또는 모든 
+2) Generic Type changes and improvements
+Java8은 제네릭 메소드 호출에서 명시적 유형 인수의 필요성을 크게 줄이는 추론 지원에 대한 개선 사항을 제공한다.
+
+~~~
+jmrClass.method();
+//형식 정보를 무시하는 것만으로도 호출 할 수 있습니다.
+jmrClass.method();
+//이 형식은 메서드 시그니처에 의해 추론 될 수 있으며 뷰 소스 와 같이 중첩 된 호출에 유용 합니다.
+myCollection.sort().removeUseless().beautify();
+~~~
+
+3) Stream Collection Types(java.util.stream)
+
+~~~
+List guys = list.getStream.collect(Collectors.toList())
+~~~
+
+또한 다음과 같이 병렬로 구현 될 수있다.
+
+~~~
+List guys = list.getStream.parallel().collect(Collectors.toList()
+~~~
+
+콜렉션을 단일 항목으로 축소하는 또 다른 좋은 예는 reduce algorithem을 호출하는 것입니다.
+
+~~~
+int sum = numberList.stream().reduce(0, (x, y) -> x+y);
+// or
+int sum = numberList.stream().reduce(0, Integer::sum);
+~~~
+
+4) Functional Interfaces(java.util.function)  
+* 대표적인 Functional Interfaces  
+	+ java.util.function.function   
+	+ java.util.function.consumer  
+	+ java.util.function.predicate  
+	+ java.util.function.supplier  
+
+5) Nashorm - The Node.js on JVM  
+JVM에서 javascript를 실행 할 수 있게 해주는 javascript 엔진.
+
+6) Date/Time changes(java.time)  
+날짜 / 시간 API는 java.time 패키지로 이동되고 Joda 시간 형식이 뒤 따른다. 또 하나의 장점은 Threadsafe와 불변 클래스가 대부분입니다.
+
+* 현재 시간 구하기
+
+~~~
+LocalDateTime timePoint = LocalDateTime.now(); // 현재의 날짜와 시간
+~~~
+
+* 원하는 시간으로 time 객체 생성하기
+
+~~~
+// 2012년 12월 12일의 시간에 대한 정보를 가지는 LocalDate객체를 만드는 방법  
+LocalDate ld1 = LocalDate.of(2012, Month.DECEMBER, 12); // 2012-12-12 from values
+
+// 17시 18분에 대한 LocalTime객체를 구한다.
+LocalTime lt1 = LocalTime.of(17, 18); // 17:18 (17시 18분)the train I took home today
+
+// 10시 15분 30초라는 문자열에 대한 LocalTime객체를 구한다.
+LocalTime lt2 = LocalTime.parse("10:15:30"); // From a String
+~~~
+
+* 현재 날짜와 시간 정보를 getter메소드를 이용하여 구하는 방법
+
+~~~
+LocalDate theDate = timePoint.toLocalDate();
+Month month = timePoint.getMonth();
+int day = timePoint.getDayOfMonth();
+int hour = timePoint.getHour();
+int minute = timePoint.getMinute();
+int second = timePoint.getSecond();
+// 달을 숫자로 출력한다 1월도 1부터 시작하는 것을 알 수 있습니다. 
+System.out.println(month.getValue() + "/" + day + "  " + hour + ":" + minute + ":" + second);
+~~~
+
+7) Type Annotations
+이제 주석을 사용하여 제네릭 형식 자체를 장식 할 수 있습니다.
+
+* 심플 타입
+
+~~~
+@NotNull String str1 = ...
+@Email String str2 = ...
+@NotNull @NotBlank String str3 = ...
+~~~
+
+* 중첩으로 사용 가능
+
+~~~
+Map.@NonNull Entry = ...
+~~~
+
+* 형태 주석을 가지는 생성자 
+
+~~~
+new @Interned MyObject()
+new @NonEmpty @Readonly List<String>(myNonEmptyStringSet)
+~~~
+
+* 중첩 된(NonStatic) 클래스 생성자와도 함께 사용 가능
+
+~~~
+myObject.new @Readonly NestedClass ()
+~~~
+
+* 유형 캐스트
+
+~~~
+myString = (@NonNull String) myObject; 
+query = (@Untainted String) str;
+~~~
+
+* 계승
+
+~~~
+class UnmodifiableList<T> implements @Readonly List<T> { ... }
+~~~
+
+* 제너릭 형식을 사용 하여 사용 가능
+
+~~~
+List<@Email String> emails = ...
+List<@ReadOnly @Localized Message> messages = ...
+Graph<@Directional Node> directedGraph = ...
+~~~
+
+* Exception
+
+~~~
+void monitorTemperature() throws @Critical TemperatureException { ... }
+void authenticate() throws @Fatal @Logged AccessDeniedException { ... }
+~~~
+
+* instanceof
+
+~~~
+boolean isNonNull = myString instanceof @NonNull String;
+boolean isNonBlankEmail = myString instanceof @NotBlank @Email String;
+~~~
+
+* Java8 메소드 및 생성자
+
+~~~
+@Vernal Date::getDay
+List<@English String>::size
+Arrays::<@NonNegative Integer>sort
+~~~
 
 
+8) Other - (nice to have) Changes
 
-8) Key Agreement with Curve25519 and Curve448
+- Reflection api의 TypeName, GenericString 추가로 약간의 성능 향상
+- String.join() 추가로 자체 생성 유틸리티 클래스가 대신 만들어짐
 
-9) Unicode 10
-
-10) Flight Recorder
-
-11) ChaCha20 and Poly1305 Cryptographic Algorithms
-
-12) Launch Single-File Source-Code Programs
-
-13) Low-Overhead Heap Profiling
-
-14) Transport Layer Security (TLS) 1.3
-
-15) ZGC: A Scalable Low-Latency Garbage Collector(Experimental)
-
-jdk 11에서 등장한 가비지 콜렉터입니다. ZGC라고도 불리는 이 가비지 콜렉터는 아래의 몇 가지 목표를 가지고 개발되었습니다.
-
-* GC 일시 중지 시간은 10ms를 초과하지 않는다.
-* 작은 크기(수백 메가) ~ 매우 큰 크기(수 테라) 범위의 힙을 처리한다.
-* G1에 비해 애플리케이션 처리량이 15%이상 감소하지 않는다.
-* 향후 GC 최적화를 위한 기반 마련.
-* 처음에는 Linux / x64을 지원 (향후 추가 플랫폼 지원 가능).
-
-아시다시피, JVM으로 구동되는 애플리케이션의 경우, GC가 동작할 때 애플리케이션이 멈추는 현상(Stop-The-World)은 성능에서 큰 영향을 끼쳐왔습니다. 이러한 정지시간을 줄이거나 없앰으로써 애플리케이션의 성능향상에 기여할 수 있습니다.
-
-ZGC의 주요 원리는 Load barrier와 Colored object pointer를 함께 사용하는 것입니다. 이를 통해 Java의 애플리케이션 스레드가 동작하는 중간에, ZGC가 객체 재배치 같은 작업을 수행할 수 있게 해줍니다.
-
-16) Deprecate the Nashorn JavaScript Engine
-
-17) Deprecate the Pack200 Tools and API
+~~~
+ // public static String join(CharSequence delimiter, CharSequence... elements);
+ String abc = String.join(" ", "Java", "8");  => "Java 8"
+~~~
