@@ -80,6 +80,7 @@ var list = new ArrayList<String>();
 var s1 -> s1 //var를 람다에 이용하려면 괄호가 필요함.
 ~~~
 
+  
 4) Nested Based Access Control
 : 중첩 클래스 제어 기능 제공
 
