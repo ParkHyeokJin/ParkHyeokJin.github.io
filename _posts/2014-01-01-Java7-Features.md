@@ -2,7 +2,7 @@
 layout: post
 title: Java7의 10가지 새로운 기능
 date:   2014-01-11 10:00:00
-categories: others
+categories: Java
 comments: true 
 ---
 

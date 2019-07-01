@@ -2,7 +2,7 @@
 layout: post
 title: Java11의 새로운 기능
 date:   2019-05-31 10:00:00
-categories: others
+categories: Java
 comments: true 
 ---
 

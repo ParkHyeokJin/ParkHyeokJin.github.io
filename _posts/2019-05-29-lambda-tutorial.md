@@ -2,7 +2,7 @@
 layout: post
 title: 자바 람다식 튜토리얼
 date:   2019-05-29 10:00:00
-categories: others
+categories: Java
 comments: true 
 ---
 

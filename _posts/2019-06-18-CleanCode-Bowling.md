@@ -2,7 +2,7 @@
 layout: post
 title: TDD Example(Bowling Game)
 date:   2019-06-18 10:00:00
-categories: others
+categories: Java
 comments: true
 ---
 

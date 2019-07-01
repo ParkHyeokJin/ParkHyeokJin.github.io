@@ -2,7 +2,7 @@
 layout: post
 title: 자바 디자인 패턴의 종류
 date: 2019-06-18 10:00:00
-categories: others
+categories: Java
 comments: true
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Java8의 8가지 새로운 기능
 date:   2016-01-11 10:00:00
-categories: others
+categories: Java
 comments: true 
 ---
 
