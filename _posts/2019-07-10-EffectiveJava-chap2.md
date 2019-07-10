@@ -130,49 +130,48 @@ public class MoonbucksCoffee {
     private boolean milk;   //선택
     private boolean caramel;//선택
 	
-	public static class Builder{
+    public static class Builder{
         private String size;    //필수
-	    private int shot;       //필수
-	    private int water;      //필수
+        private int shot;       //필수
+        private int water;      //필수
+        private boolean syrup;  //선택
+        private boolean milk;   //선택
+        private boolean caramel;//선택
 	    
-	    private boolean syrup;  //선택
-	    private boolean milk;   //선택
-	    private boolean caramel;//선택
-	    
-		public Builder(String size, int shot, int water) {
-			this.size = size;
-			this.shot = shot;
-			this.water = water;
-		}
+        public Builder(String size, int shot, int water) {
+            this.size = size;
+            this.shot = shot;
+            this.water = water;
+        }
+        
+        public Builder setSyrup(boolean syrup) {
+            this.syrup = syrup;
+            return this;
+        }
+        
+        public Builder setMilk(boolean milk) {
+            this.milk = milk;
+            return this;
+        }
+        
+        public Builder setCaramel(boolean caramel) {
+            this.caramel = caramel;
+            return this;
+        }
+        
+        public MoonbucksCoffee makeCoffee() {
+            return new MoonbucksCoffee(this); 
+        }
+    }
 
-		public Builder setSyrup(boolean syrup) {
-			this.syrup = syrup;
-			return this;
-		}
-
-		public Builder setMilk(boolean milk) {
-			this.milk = milk;
-			return this;
-		}
-
-		public Builder setCaramel(boolean caramel) {
-			this.caramel = caramel;
-			return this;
-		}
-	    
-		public MoonbucksCoffee makeCoffee() {
-			return new MoonbucksCoffee(this); 
-		}
-	}
-
-	public MoonbucksCoffee(Builder builder) {
-		size = builder.size;
-		shot = builder.shot;
-		water = builder.water;
-		syrup = builder.syrup;
-		milk = builder.milk;
-		caramel = builder.caramel;
-	}
+    public MoonbucksCoffee(Builder builder) {
+        size = builder.size;
+        shot = builder.shot;
+        water = builder.water;
+        syrup = builder.syrup;
+        milk = builder.milk;
+        caramel = builder.caramel;
+    }
 }
 ```
 ```java
