@@ -15,6 +15,7 @@ comments: true
 여러가지 싱글턴 생성 방식을 살펴보자.
 
 > 예1) public static final 방식의 싱글턴
+
 ```java
 public class SingletonClass {
 	public static final SingletonClass INSTANCE = new SingletonClass();
@@ -23,6 +24,7 @@ public class SingletonClass {
 ```
 
 > 예2) 정적 팩터리 방식의 싱글턴
+
 ```java
 public class SingletonClass {
 	private static final SingletonClass INSTANCE = new SingletonClass();
@@ -35,6 +37,7 @@ public class SingletonClass {
 하지만 직렬화 해야 하는 경우 추가 방법이 필요하다.
 
 > 예3) 열거 타입 방식의 싱글턴 - 바람직한 방법  
+
 ```java
 public enum SingletonClass{
 	INSTANCE;
@@ -55,6 +58,7 @@ public enum SingletonClass{
 private 생성자로 막을 수 있다.
 
 > Utils.java  
+
 ```java
 public class Utils {
 	public static int toInt(Object v) {
