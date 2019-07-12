@@ -34,13 +34,14 @@ public class SingletonClass {
 예1과 예2 모두 새로운 인스턴스가 생성 되는 것을 방지 할 수 있다.
 하지만 직렬화 해야 하는 경우 추가 방법이 필요하다.
 
-> 예3) 열거 타입 방식의 싱글턴 - 바람직한 방법
+> 예3) 열거 타입 방식의 싱글턴 - 바람직한 방법  
 ```java
 public enum SingletonClass{
 	INSTANCE;
 	public void build() {}
 }
 ```
+
 - 장점
     - 간결하게 단하나의 인스턴스만 생성 된다.
     - 직렬화 할 수 있다.
@@ -53,7 +54,7 @@ public enum SingletonClass{
 단순한 정적 메서드와 정적 필드만 담은 클래스, 예를들어 유틸성 클래스등의 인스턴스를 막기 위해서는
 private 생성자로 막을 수 있다.
 
-> Utils.java
+> Utils.java  
 ```java
 public class Utils {
 	public static int toInt(Object v) {
