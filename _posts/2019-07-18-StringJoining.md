@@ -16,6 +16,7 @@ comments: true
 - 요건 1 : {"hello", "java", "World"}의 문자열 배열이 있다. 이 문자열 배열을 " " 공백으로 연결 하고자 한다.
   
 > 예1) Joning.class
+
 ```java
 public class Joning{
     String[] str = {"hello", "java", "World"};
@@ -117,7 +118,8 @@ JAVA8에서는 String 클래스에서 Join 메서드를 제공 하고 있다.
 한줄을 이용해서 동일한 결과를 얻을 수 있다.  
 String.Join() 메서드는 아래와 같이 내부적으로 StringJoiner() 클래스를 구성하고 잇다.
     
-    - String.Join()
+- String.Join()
+    
     ```java
     public static String join(CharSequence delimiter, CharSequence... elements) {
             Objects.requireNonNull(delimiter);
