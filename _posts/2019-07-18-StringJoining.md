@@ -106,33 +106,33 @@ public StringJoiner add(CharSequence newElement) {
 
 JAVA8에서는 String 클래스에서 Join 메서드를 제공 하고 있다.
     
-    ```java
-    public class Joning{
-        String[] str = {"hello", "java", "World"};
-        @Test
-        public void java8StringJoin() {
-                     assertEquals("hello java World", String.join(" ", str));
-        }
+```java
+public class Joning{
+    String[] str = {"hello", "java", "World"};
+    @Test
+    public void java8StringJoin() {
+                 assertEquals("hello java World", String.join(" ", str));
     }
-    ```
+}
+```
     
 한줄을 이용해서 동일한 결과를 얻을 수 있다.  
 String.Join() 메서드는 아래와 같이 내부적으로 StringJoiner() 클래스를 구성하고 잇다.
     
 - String.Join()
     
-    ```java
-    public static String join(CharSequence delimiter, CharSequence... elements) {
-            Objects.requireNonNull(delimiter);
-            Objects.requireNonNull(elements);
-            // Number of elements not likely worth Arrays.stream overhead.
-            StringJoiner joiner = new StringJoiner(delimiter);
-            for (CharSequence cs: elements) {
-                joiner.add(cs);
-            }
-            return joiner.toString();
+```java
+public static String join(CharSequence delimiter, CharSequence... elements) {
+        Objects.requireNonNull(delimiter);
+        Objects.requireNonNull(elements);
+        // Number of elements not likely worth Arrays.stream overhead.
+        StringJoiner joiner = new StringJoiner(delimiter);
+        for (CharSequence cs: elements) {
+            joiner.add(cs);
         }
-    ```
+        return joiner.toString();
+    }
+```
     
 ### 결론
 이외에도 Stream Collectors 클래스의 joining()을 이용해서 연결을 할 수 도 있지만
