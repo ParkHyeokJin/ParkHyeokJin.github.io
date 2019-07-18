@@ -14,6 +14,7 @@ comments: true
 아래와 같은 요건이 주어졌을 경우를 생각해보자.
 
 - 요건 1 : {"hello", "java", "World"}의 문자열 배열이 있다. 이 문자열 배열을 " " 공백으로 연결 하고자 한다.
+- 예제소스 : [https://github.com/ParkHyeokJin/StringJoiner-Exam]
   
 > 예1) Joning.class
 
