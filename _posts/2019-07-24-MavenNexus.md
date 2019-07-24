@@ -66,7 +66,7 @@ SVN 서버에 Maven Repository 를 관리 할 수 있도록 Nexus를 설치 해�
     Nexus는 무료로 Maven Repository를 사용 할 수 있는 툴이다.  
     다운로드는 <https://www.sonatype.com/download-oss-sonatype> 에서 받을 수 있다.
     
-    ![NexusDown](/img/nexus/nexusDwn.png){: width="80%" height="80%"}
+    ![NexusDown](/img/nexus/nexusDwn.PNG){: width="80%" height="80%"}
     <br />
     
     윈도우 버전을 다운 받아서 설치 하기로 하였다.
