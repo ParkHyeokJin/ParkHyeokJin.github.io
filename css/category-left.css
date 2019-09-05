@@ -1,0 +1,43 @@
+.site-category-left{
+  background: #FFFFFF;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin:auto;
+  padding:0;
+  font-size:25px;
+  text-align: center;
+  clear:left;
+  }
+
+  .site-category-left ul{
+  //background: rgb(109,109,109);
+  height:50px;
+  list-style:none;
+  line-height: 1.5;
+  margin:0 auto;
+  padding:0;
+  display:inline-block;
+  }
+
+  .site-category-left li{
+  //float: left;
+  display:inline;
+  }
+
+  .site-category-left li a{
+  background: $brand-color;
+  display:block;
+  font-weight:normal;
+  line-height:50px;
+  margin:0px;
+ // padding:0px 25px;
+  text-align:center;
+  text-decoration:none;
+  color:#000000;
+  }
+
+  .site-category-left li a:hover{
+  background: rgb(71,71,71);
+  color:#FFFFFF;
+  text-decoration:none;
+  }

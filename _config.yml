@@ -12,6 +12,18 @@ keep_files:
   - ".git"
   - ".gitignore"
 
+# 페이징 설정
+plugins:
+  - jekyll-paginate-v2
+pagination:
+  enabled: true
+  per_page: 8
+  sort_reverse: true
+  title: ':title'
+  permalink: '/page/:num_'
+  trail:
+    before: 5
+    after: 5
 
 # Site settings
 title: HyeokJin blog

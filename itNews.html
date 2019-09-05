@@ -1,0 +1,35 @@
+---
+layout: page
+title: IT News
+permalink: /itNews/
+---
+
+<!-- Slider Start -->
+{% include topCategory.html %}
+
+<div class="container">
+    <div class="row">
+        {% for post in site.itNews %}
+            <div class="post-area">
+              <a href="{{ post.url | prepend: site.baseurl }}" class="bold">{{ post.title }}</a>
+              <p class="post-date">{{ post.date | date_to_long_string }}</p>
+              <p>
+                {{ post.content | strip_html | truncatewords: 50 }}
+              </p>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No search Posts',
+    limit: 10,
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+</script>

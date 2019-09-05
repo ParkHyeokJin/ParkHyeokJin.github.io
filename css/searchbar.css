@@ -8,6 +8,8 @@
 
 #search-body{
 	float: right;
+	position: relative;
+	padding-top:15px;
 }
 
 #results-container{
