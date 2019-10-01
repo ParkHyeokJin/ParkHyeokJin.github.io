@@ -2,7 +2,7 @@
 layout: post
 title: ELK STACK(Elastic Search, Kibana, Logstash) 이란 ?
 date:   2019-09-26 10:10:00
-categories: Java
+categories: others
 comments: true 
 ---
 
