@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jenkins + Git + Maven 환경 구성 해서 작업 생성 해보기
-date:   2019-09-26 10:10:00
+date:   2019-10-01 10:10:00
 categories: others
 comments: true 
 ---
