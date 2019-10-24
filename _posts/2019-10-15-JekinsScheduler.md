@@ -2,7 +2,7 @@
 layout: post
 title: 젠킨스 스케쥴을 이용하여 업무시간을 단축 하기
 date:   2019-10-15 10:10:00
-categories: Java
+categories: DevOps
 comments: true 
 ---
 

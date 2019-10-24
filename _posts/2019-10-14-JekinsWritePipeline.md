@@ -2,7 +2,7 @@
 layout: post
 title: 젠킨스 파이프라인 작성방법(기초)
 date:   2019-10-14 10:10:00
-categories: Java
+categories: DevOps
 comments: true 
 ---
 

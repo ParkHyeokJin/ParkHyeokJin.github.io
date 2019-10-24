@@ -2,7 +2,7 @@
 layout: post
 title: Maven package 시 참조된 라이브러리 배포하기
 date: 2019-09-22 10:00:00
-categories: Java
+categories: DevOps
 comments: true
 ---
 

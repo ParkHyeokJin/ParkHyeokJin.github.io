@@ -2,7 +2,7 @@
 layout: post
 title: 젠킨스 오프라인 설치 (젠킨스 플러그인 오프라인 설치)
 date:   2019-10-07 10:30:00
-categories: Java
+categories: DevOps
 comments: true 
 ---
 
