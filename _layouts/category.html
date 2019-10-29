@@ -5,12 +5,16 @@ layout: default
 {% include topCategory.html %}
 
 <div class="container">
+    {% assign category = page.category | default : page.title %}
     <div class="row">
         <div class="col-xs-3">
-            {% include category-left.html %}
+            {% if category == "JPA" or category == "Java" or category == "Exception" or category == "DevOps" or category == "Algorithm" or category == "others" or category =="kotlin" %}
+                {% include category-left.html %}
+            {% elsif category == "New Items" %}
+                {% include itNews-leftMenu.html %}
+            {% endif %}
         </div>
         <div class="col-xs-9">
-            {% assign category = page.category | default : page.title %}
             {% for post in site.categories[category] %}
             <div class="post-area">
                 <a href="{{ post.url | prepend: site.baseurl }}" class="bold">{{ post.title }}</a>

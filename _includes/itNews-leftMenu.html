@@ -1,0 +1,16 @@
+<div class="site-category-left">
+    <ul>
+        <li><a href="{{ site.baseurl }}/news">All</a></li>
+        {% assign pages_list = site.pages %}
+        {% for node in pages_list %}
+            {% if node.title != null %}
+                {% if node.layout == "category" %}
+                    {% if node.title == "New Items" %}
+                    <li><a class="category-link {% if page.url == node.url %} active {% endif %}"
+                           href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
