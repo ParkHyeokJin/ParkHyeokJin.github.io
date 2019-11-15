@@ -8,7 +8,7 @@ layout: default
     {% assign category = page.category | default : page.title %}
     <div class="row">
         <div class="col-xs-3">
-            {% if category == "JPA" or category == "Java" or category == "Exception" or category == "DevOps" or category == "Algorithm" or category == "others" or category =="kotlin" %}
+            {% if category == "JPA" or category == "Java" or category == "Exception" or category == "DevOps" or category == "Algorithm" or category == "others" or category =="kotlin" or category == "Spring"%}
                 {% include category-left.html %}
             {% elsif category == "New Items" %}
                 {% include itNews-leftMenu.html %}

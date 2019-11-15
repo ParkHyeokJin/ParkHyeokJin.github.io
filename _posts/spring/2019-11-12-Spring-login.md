@@ -2,8 +2,8 @@
 layout: post
 title: 스프링 + JPA 웹사이트 만들기(로그인편)
 date:   2019-11-13 10:00:00
-categories: JPA
-category : JPA
+categories: Spring
+category : Spring
 comments: true 
 ---
 
