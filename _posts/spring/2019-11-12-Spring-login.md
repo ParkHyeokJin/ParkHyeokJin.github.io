@@ -15,6 +15,7 @@ comments: true
 1. 기본 환경
 
     - 기본 환경은 앞선 포스팅 참조 : <https://parkhyeokjin.github.io/jpa/2019/11/08/JPA-chap11.html>
+    - 예제 소스 : <https://github.com/ParkHyeokJin/SpringRepo.git>
 
 2. 기능 정의
 

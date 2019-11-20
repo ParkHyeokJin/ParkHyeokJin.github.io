@@ -19,6 +19,7 @@ comments: true
     - Maven
     - 사용 가능한 IDE
     - H2 Database
+    - 예제 소스 : <https://github.com/ParkHyeokJin/SpringRepo.git>
 
 2. 기능 목표
 
@@ -208,7 +209,7 @@ public class Application {
     
 - 결과
 
-    ![batch 결과](/img/jpa/JPA-CHAP13-1.PNG){: width=100%, height=100% }
+    ![batch 결과](/img/spring/BatchResult.PNG){: width=100%, height=100% }
     
     
 
