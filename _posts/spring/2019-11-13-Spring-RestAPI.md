@@ -17,7 +17,7 @@ comments: true
     - JDK 1.8 이상
     - Maven
     - 사용 가능한 IDE
-    - 예제 소스 : <https://github.com/ParkHyeokJin/SpringRepo.git>
+    - 예제 소스 : <https://github.com/ParkHyeokJin/SpringRepo/tree/master/JPA-Exam11-RestApi>
 
 2. 기능 정의
 

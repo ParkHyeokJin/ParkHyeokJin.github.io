@@ -19,7 +19,7 @@ comments: true
     - Maven
     - 사용 가능한 IDE
     - H2 Database
-    - 예제 소스 : <https://github.com/ParkHyeokJin/SpringRepo.git>
+    - 예제 소스 : <https://github.com/ParkHyeokJin/SpringRepo/tree/master/JPA-Exam12-Batch>
 
 2. 기능 목표
 
