@@ -232,6 +232,78 @@ facebook:
 
 ![페이스북 인증정보 확인](/img/spring/oauth-11.PNG){: width=100%, height=100% }
 
+### ssoFilter 리팩토링
+
+페이스북 외 구글 깃헙 등 인증 서비스를 하는 사이트가 추가됨에 있어 편리하게 추가 할 수 있도록 리팩토링 해보자.
+
+yml 파일을 매핑 하기 위해 ClientResources 클래스를 생성 합니다. NestedConfigurationProperty 어노테이션은 ConfigurationProperties 객체의 필드를
+중첩된 유형 인 것 처럼 처리해야 한다는 걸 나타내는 어노테이션 입니다.
+
+```java
+public class ClientResources {
+	@NestedConfigurationProperty
+	private AuthorizationCodeResourceDetails client = new AuthorizationCodeResourceDetails();
+
+	@NestedConfigurationProperty
+	private ResourceServerProperties resource = new ResourceServerProperties();
+
+	public AuthorizationCodeResourceDetails getClient() {
+		return client;
+	}
+
+	public ResourceServerProperties getResource() {
+		return resource;
+	}
+}
+```
+
+@ConfigurationProperties 어노테이션을 사용 하여 이전에 만들었던 ClientResources() 객체를 생성 합니다. 이는 yml 파일에서 해당하는 config 설정을 매핑 시켜 줍니다.
+
+- MemberConfig
+
+```java
+
+@Bean
+@ConfigurationProperties("github")
+public ClientResources github() {
+    return new ClientResources();
+}
+
+@Bean
+@ConfigurationProperties("facebook")
+public ClientResources facebook() {
+    return new ClientResources();
+}
+```
+
+ssoFilter 래퍼 메서드를 생성 하여 여러 ssoFilter 를 생성 할 수 있도록 리팩토링 합니다.
+
+```java
+
+private Filter ssoFilter() {
+    CompositeFilter filter = new CompositeFilter();
+    List<Filter> filters = new ArrayList<>();
+    filters.add(ssoFilter(facebook(), "/login/facebook"));
+    filters.add(ssoFilter(github(), "/login/github"));
+    filter.setFilters(filters);
+    return filter;
+}
+
+private Filter ssoFilter(ClientResources client, String path) {
+    OAuth2ClientAuthenticationProcessingFilter filter = new OAuth2ClientAuthenticationProcessingFilter(path);
+    OAuth2RestTemplate template = new OAuth2RestTemplate(client.getClient(), oauth2ClientContext);
+    filter.setRestTemplate(template);
+    UserInfoTokenServices tokenServices = new UserInfoTokenServices(
+      client.getResource().getUserInfoUri(), client.getClient().getClientId());
+    tokenServices.setRestTemplate(template);
+    filter.setTokenServices(tokenServices);
+    return filter;
+}
+``` 
+
+이렇게 이 팩토링 된 메서드는 다른 인증 서비스를 추가 할때 filters 에 추가 하면 되도록 편리 하게 활용 할 수 있습니다. 
+
+
 ### 마무리
 
 간단한 어플리케이션 수정을 통해서 페이스북 인증을 통해서 나의 어플리케이션에 인증을 하는 기능을 OAuth2를 이용하여 살펴 보았습니다.  
