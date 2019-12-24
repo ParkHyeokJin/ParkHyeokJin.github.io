@@ -5,7 +5,7 @@
         {% for node in pages_list %}
             {% if node.title != null %}
                 {% if node.layout == "category" %}
-                    {% if node.title == "JPA" or node.title == "Java" or node.title == "Algorithm" or node.title == "others" or node.title == "DevOps" or node.title == "Exception" or node.title == "kotlin" or node.title == "Spring" %}
+                    {% if node.title != ""New Items" %}
                     <li>
                     <a class="category-link {% if page.url == node.url %} active {% endif %}"
                        href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
