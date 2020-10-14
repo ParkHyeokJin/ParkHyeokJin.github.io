@@ -23,7 +23,7 @@ Jenkins 관리 > 플러그인 관리 > 설치 가능
 
 배포 서버에서 타겟서버로 배포 하기 위해서는 배포서버(Jenkins Server) 의 SSH KEY 가 필요합니다.
 
-~~~shell script
+```shell script
 $ cd ~/.ssh
 $ pwd
 /home/deploy/.ssh
@@ -38,16 +38,16 @@ Your public key has been saved in /home/deploy/.ssh/id_rsa.pub.
 # 생성된 key 확인
 $ ls
 authorized_keys  id_rsa  id_rsa.pub
-~~~
+```
 
 
 ### 타겟서버 Key 등록 하기
 
 배포서버에서 생성된 id_rsa.pub(Public Key) 의 내용을 복사하여 타겟 서버의 ~/.ssh/authorized_keys 파일을 vim 으로 열어 key 내용을 붙여 넣습니다.
 
-~~~shell script
+```shell script
 $ vim ~/.ssh/authorized_keys
-~~~
+```
 
 ### Jenkins SSH Key 등록하기
 
