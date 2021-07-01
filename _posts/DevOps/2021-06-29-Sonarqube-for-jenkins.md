@@ -21,24 +21,24 @@ Jenkins 에서 Sonarqube 를 사용 하기 위에서 플러그인을 설치 해�
 
 > Jenkins > Jenkins 관리 > 플러그인 관리
 
-![jenkins_plugins](/img/sonarqube/install-plugins.png)
+![jenkins_plugins](/img/sonarqube/install-plugins.png){: width="90%" height="90%"}
 
 
 Jenkins 플러그인 설치 후 Global Tool Configuration 메뉴에서 Sonarqube Scanner 을 설정 합니다.
 
 > Jenkins > Jenkins 관리 > Global Tool Configuration
 
-![jenkins_config](/img/sonarqube/set-jenkinsConfig.png)
+![jenkins_config](/img/sonarqube/set-jenkinsConfig.png){: width="90%" height="90%"}
 
 Jenkins 환경 설정 메뉴에서 SonarQube 서버 설정을 합니다.
 
 > Jenkins > Jenkins 관리 > 환경 설정
 
-![jenkins_config](/img/sonarqube/set-jenkinsConfig2.png)
+![jenkins_config](/img/sonarqube/set-jenkinsConfig2.png){: width="90%" height="90%"}
 
 서버 설정시 자격 증명은 _Secret text_ 로 선택 하여 Sonarqube 에서 발급 받은 Token 정보를 입력합니다.
 
-![jenkins_config](/img/sonarqube/jenkins-credentials-provider.png)
+![jenkins_config](/img/sonarqube/jenkins-credentials-provider.png){: width="90%" height="90%"}
 
 ### Sonarqube 프로젝트 생성
 
@@ -48,11 +48,12 @@ Jenkins 환경 설정 메뉴에서 SonarQube 서버 설정을 합니다.
 
 Sonarqube 플러그인 설치 후 프로젝트 생성을 생성을 하면 Build 항목에 Execute Sonarqube Scanner Step 이 생성 됩니다.
 
-![jenkins_build](/img/sonarqube/buildStep.png)
+![jenkins_build](/img/sonarqube/buildStep.png){: width="90%" height="90%"}
 
 Analysis properties 영역에 아래 정보들을 입력 합니다.
 
 * 작성 예시
+
 ```text
 # unique project identifier (required)
 sonar.projectKey=my:project
@@ -79,7 +80,7 @@ sonar.my.property=value
 
 프로젝트 생성을 하고 빌드 수행시 아래와 같이 Sonarqube 스캔 결과를 볼수 있습니다.
 
-![jenkins_projectView](/img/sonarqube/JenkinsProjectView.png)
+![jenkins_projectView](/img/sonarqube/JenkinsProjectView.png){: width="90%" height="90%"}
 
 ### Jenkins Pipeline 활용
 
