@@ -8,9 +8,9 @@ comments: true
 ---
 
 JetBrains 의 제품중에서는 Database Tool 인 DataGrip 이라는 유료 제품이 있습니다.    
-DataBase 관리를 하기에 최적화된 툴이지만 유료이기 때문에 접근하기에 어렵습니다.  
+Database 관리를 하기에 최적화된 툴이지만 유료이기 때문에 접근하기에 어렵습니다.  
 하지만 인텔리제이에서도 기본적인 Database 를 사용 할 수 있는 기능을 제공 하고 있습니다.  
-인텔리제이에서 DataBase에 접속 하여 기존적인 DML 을 사용 하는 방법을 정리 해보겠습니다.  
+인텔리제이에서 Database 에 접속 하여 사용 하는 방법을 정리 해보겠습니다.  
 
 ---
 
@@ -33,7 +33,7 @@ Database 추가를 위해 상단의 + 를 선택 합니다.
 
 + 버튼을 선택 하면 아래 사진과 같이 DataSource 를 선택 할 수 있습니다.(전 테스트용으로 mySql 을 선택 하였습니다.)
 
-![db-3](/img/intellij/db-3.png){: width="90%" height="90%"}
+![db-3](/img/intellij/db-3.png){: width="60%" height="60%"}
 
 양식에 맞추어 DB 정보를 입력 합니다.
 
@@ -47,7 +47,7 @@ DB 명 옆에 표시 되어있는 1 of 4 버튼을 클릭하면 해당 DB 의 �
 
 ![db-6](/img/intellij/db-6.png){: width="90%" height="90%"}
 
-DB 접속 후 아래와 같이 DDL, DML 을 수행 할 수 있으며 쿼리 작성시 자동 완성 기능도 매우 훌륭 하게 사용 할 수 있습니다.
+DB 접속 후 아래와 같이 스키마 생성, 테이블 생성, 조회를 수행 할 수 있으며 쿼리 작성시 자동 완성 기능도 매우 훌륭 하게 사용 할 수 있습니다.
 
 ![db-8](/img/intellij/db-8.png){: width="90%" height="90%"}
 
