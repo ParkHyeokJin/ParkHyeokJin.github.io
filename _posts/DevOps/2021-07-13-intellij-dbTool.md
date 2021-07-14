@@ -33,23 +33,23 @@ Database 추가를 위해 상단의 + 를 선택 합니다.
 
 + 버튼을 선택 하면 아래 사진과 같이 DataSource 를 선택 할 수 있습니다.(전 테스트용으로 mySql 을 선택 하였습니다.)
 
-![db-3](/img/intellij/db-3.jpg){: width="90%" height="90%"}
+![db-3](/img/intellij/db-3.png){: width="90%" height="90%"}
 
 양식에 맞추어 DB 정보를 입력 합니다.
 
-![db-5](/img/intellij/db-5.jpg){: width="90%" height="90%"}
+![db-5](/img/intellij/db-5.png){: width="90%" height="90%"}
 
 Test Connection 을 선택 하여 정상 접속 되는 것을 확인 합니다.
 
-![db-7](/img/intellij/db-7.jpg){: width="90%" height="90%"}
+![db-7](/img/intellij/db-7.png){: width="90%" height="90%"}
 
 DB 명 옆에 표시 되어있는 1 of 4 버튼을 클릭하면 해당 DB 의 스키마 리스트를 확인 할 수 있습니다.
 
-![db-6](/img/intellij/db-6.jpg){: width="90%" height="90%"}
+![db-6](/img/intellij/db-6.png){: width="90%" height="90%"}
 
 DB 접속 후 아래와 같이 DDL, DML 을 수행 할 수 있으며 쿼리 작성시 자동 완성 기능도 매우 훌륭 하게 사용 할 수 있습니다.
 
-![db-8](/img/intellij/db-8.jpg){: width="90%" height="90%"}
+![db-8](/img/intellij/db-8.png){: width="90%" height="90%"}
 
 
 
