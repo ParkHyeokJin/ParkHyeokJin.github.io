@@ -10,11 +10,11 @@ comments: true
 ## Github Achievements 획득!
 --------
 
-오랜만에 Github에 접속! 못보던 배찌가 생겼습니다. 뱃지 이름은 Arctic Code Vault Contributor!
+오랜만에 Github에 접속! 못보던 뱃지가 생겼습니다. 뱃지 이름은 Arctic Code Vault Contributor!
 
 ![Achievements_img](/img/github-achievements.png){: width="80%" height="80%"}
 
-배찌가 생겨 기분 좋은 마음으로 어떤 배찌 인지 알아보기 시작 했습니다.
+새로운 뱃지가 생겨 기분 좋은 마음으로 어떤 뱃지 인지 알아보기 시작 했습니다.
 
 북극?? 저장소?? 이게 다 무슨 말인지 알아 보겠습니다.
 
