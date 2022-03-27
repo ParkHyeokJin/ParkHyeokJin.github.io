@@ -72,7 +72,7 @@ RabbitMQ 의 구조는 간단히 아래와 같습니다.
 - exchange : 메시지 라우터 
 - Consumer : 메시지 소비자
 
-간단한 AMQP 시스템을 만들기 위해 Spring AMQP 라이브러리를 이용하여 프로젝트를 구성 하였으며 자세한 소스는 github 에서 확인 할 수 있습니다.
+간단한 AMQP 시스템을 만들기 위해 Spring AMQP 라이브러리를 이용하여 프로젝트를 구성 하였으며 자세한 소스는 github 에서 확이 할 수 있습니다.
 
 #### rabbitMQ 설정
 
@@ -138,7 +138,7 @@ public class Consumer {
 
 브라우저에서 http api 를 호출 합니다. 
 
-> http://localhost:8080/send?msg=김밥
+> http://localhost:8080/send?msg=TEST
 
 해당 메시지를 수신한 controller 에서 MQ 에 메시지를 담게 되고 @RabbitListener 에서 이벤트를 감지하여  
 메시지를 수신하여 로그를 출력 한 결과를 볼 수 있습니다.
