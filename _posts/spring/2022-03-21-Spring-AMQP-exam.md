@@ -63,7 +63,7 @@ rabbitmq 관리 사이트에서 큐 생성, 분배 설정 등 설정 및 기능�
 
 #### Spring AMQP 프로젝트 구성
 
-RabbitMQ 의 구조는 간단히 아래와 같습니다.  
+RabbitMQ 의 구조는 간단히 아래와 같습니다. 
 
 ![rabbitMQ](/img/spring/rabbitmq-img1.png)
 
