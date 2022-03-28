@@ -102,4 +102,4 @@ edit c1a88ee add debug logger
 ![git rebase img3](=업무폴더=/source/ParkHyeokJin.github.io/img/github/git-rebase-img3.png)
 
 
-> #ubuntu #서버세팅 #locale #utf-8
+> #git #github #cicd #잔디가없어
