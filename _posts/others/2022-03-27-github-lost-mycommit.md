@@ -47,7 +47,7 @@ user.email 확인 방법은 아래와 같습니다. (프로젝트 폴더 내에�
 
 > git log --pretty=format:"%h = %an , %ar : %s" --graph
 
-![img.png](=업무폴더=/source/ParkHyeokJin.github.io/img/github/git-rebase-img4.png)
+![commit rebase img4](/img/github/git-rebase-img4.png)
 
 커밋이 잘못 된 부분의 바로 앞단계 커밋 해시 값을 찾은 다음에 아래 명령어를 통해서 수정 하면 됩니다.
 
@@ -75,7 +75,7 @@ edit c1a88ee add debug logger
 
 위 처럼 수정 하면 됩니다. 수정이 완료 된 후 저장하고 나오면 아래와 같은 출력을 볼 수 있습니다.
 
-![git rebase img1](=업무폴더=/source/ParkHyeokJin.github.io/img/github/git-rebase-img1.png)
+![git rebase img1](/img/github/git-rebase-img1.png)
 
 이제부터 커밋한 내용에 대해 커밋 이메일을 설정 해주어야 합니다.
 
@@ -83,7 +83,7 @@ edit c1a88ee add debug logger
 
 위 명령어를 통해서 커밋 네임과 이메일을 설정을 하게 되면 아래와 같은 메시지를 볼 수 있습니다. 
 
-![git rebase img2](=업무폴더=/source/ParkHyeokJin.github.io/img/github/git-rebase-img2.png)
+![git rebase img2](/img/github/git-rebase-img2.png)
 
 해당 부분에서는 별다른 수정 사항 없이 저장(:p) 하고 나오면 됩니다.
 
@@ -99,7 +99,7 @@ edit c1a88ee add debug logger
 
 > git push origin +master
 
-![git rebase img3](=업무폴더=/source/ParkHyeokJin.github.io/img/github/git-rebase-img3.png)
+![git rebase img3](/img/github/git-rebase-img3.png)
 
 
 > #git #github #cicd #잔디가없어
