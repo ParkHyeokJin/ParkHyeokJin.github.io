@@ -1,4 +1,4 @@
 ---
 layout: category
-title: Java 스터디
+title: Java
 ---
