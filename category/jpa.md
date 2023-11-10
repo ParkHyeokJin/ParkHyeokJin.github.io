@@ -1,4 +1,4 @@
 ---
 layout: category
-title: JPA
+title: JPA 저장소
 ---

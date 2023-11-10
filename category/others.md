@@ -1,4 +1,4 @@
 ---
 layout: category
-title: others
+title: 기타 기록장
 ---

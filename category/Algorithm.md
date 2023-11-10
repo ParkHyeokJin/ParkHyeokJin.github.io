@@ -1,4 +1,4 @@
 ---
 layout: category
-title: Algorithm
+title: 알고리즘저장소
 ---

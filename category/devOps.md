@@ -1,4 +1,4 @@
 ---
 layout: category
-title: DevOps
+title: DevOps 저장소
 ---

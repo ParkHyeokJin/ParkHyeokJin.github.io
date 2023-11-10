@@ -1,4 +1,4 @@
 ---
 layout: category
-title: Netty
+title: Netty 연습장
 ---
