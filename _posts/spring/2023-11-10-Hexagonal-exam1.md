@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DDD를 위한 헥사고날 아키텍처 이해하기 1
-date:   2023-11-10 10:00:00
+date:   2023-11-09 10:00:00
 categories: Spring
 category : Spring
 comments: true 
