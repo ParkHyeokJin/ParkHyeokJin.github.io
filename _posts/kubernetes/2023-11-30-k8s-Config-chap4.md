@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 쿠버네티스-Volume 기초 개념(EmptyDir, HostPath, PVC/PV)
+title: 쿠버네티스-환경 변수 기초 개념(ConfigMap, Secret)
 date:   2023-11-29 10:00:00
 categories: k8s
 category : k8s
