@@ -11,7 +11,7 @@ comments: true
 
 ### Function
 
-```go
+```text
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -71,7 +71,7 @@ data:
 
 ### if
 
-```go
+```text
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -100,7 +100,7 @@ data:
 
 ### with
 
-```go
+```text
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -127,7 +127,7 @@ data:
 
 ### range
 
-```go
+```text
 apiVersion: v1
 kind: ConfigMap
 metadata:
