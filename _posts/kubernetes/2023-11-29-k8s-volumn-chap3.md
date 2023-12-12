@@ -9,8 +9,11 @@ comments: true
 
 ## 쿠버네티스-Volume (EmptyDir, HostPath, PVC/PV)
 
+---
+
 K8s 에서 Volume 은 각 파드에 스토리지를 연결하여 전략적으로 구성 하는 기능 입니다.
 
+---
 ### EmptyDir
 
 Pod 내에 서만 사용 할 수 있는 볼륨 영역 입니다. 해당 볼륨은 Pod 내에서 사용 할 수 있고 Pod 내의 컨테이너 간에는 공유가 가능 합니다.  
@@ -42,6 +45,7 @@ spec:
     emptyDir: {}
 ```
 
+---
 ### HostPath
 HosPath 볼륨은 단일 노드에서만 공유 되는 영역 입니다. Node Path 로 생성 되기 때문에 Pod 가 삭제 되어도  
 유지 할 수 있지만 다른 노드에는 공유 할 수 없습니다.
@@ -72,7 +76,7 @@ spec:
       type: DirectoryOrCreate
 ```
 
-
+---
 ### PVC(Persistent Volume Claim) / PV(Persistent Volume)
 
 Pvc 와 Pv 는 외부 스토리지(Aws, Azure, nfs) 등을 사용 하여 K8s(Admin) 이 미리 외부 스토리지를 연결 및 구성을 하고 

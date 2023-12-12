@@ -9,6 +9,7 @@ comments: true
 
 ## ReplicaSet
 
+---
 ReplicaSet 설정 한 Pod 의 목표 숫자 만큼 Template 에 설정 된 Pod 를 생성 하고 축소 합니다.
 
 ReplicaSet 은 아래와 같은 기능을 제공 합니다.
@@ -20,6 +21,7 @@ ReplicaSet 은 아래와 같은 기능을 제공 합니다.
 * Software Update
   * Pod 의 버전을 관리 할 수 있습니다.
 
+---
 ### ReplicaSet 생성
 
 - Pod Replica(.spec.replicas)
