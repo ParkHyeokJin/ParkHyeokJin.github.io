@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JAVA 21 - VirtualThread 기능 살펴보기
-date:   2024-01-03 10:10:00
+date:   2024-01-02 10:10:00
 categories: Java
 category : Java
 comments: true 
