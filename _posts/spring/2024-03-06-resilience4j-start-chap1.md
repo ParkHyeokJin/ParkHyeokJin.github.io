@@ -23,6 +23,7 @@ Resilience4j는 일련의 내결함성 패턴을 구현하고, 이러한 패턴�
 
 
 2. __Dependency__
+
 ```groovy
 repositories {
     mavenCentral()
