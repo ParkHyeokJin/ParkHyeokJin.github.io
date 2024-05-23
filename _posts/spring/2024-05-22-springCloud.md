@@ -43,7 +43,6 @@ comments: true
 
 프로젝트에서 서비스 메시를 구성하기 위해 다양한 기술들을 비교 하였고 후보군으로 envoy 와 SpringCloud-Gateway 비교 하였고 최종적으로는 SpringCloud Stack으로 선정.
 
-
 * 비교
 
 | 특징      | 	Envoy	                                           | Spring Cloud Gateway               |
@@ -58,13 +57,14 @@ comments: true
 | 사용 사례   | 	대규모 마이크로서비스, 고성능 요구                              | 	Spring 애플리케이션, 간단한 API Gateway    |
 | 지원 프로토콜 | http/1.1 , http/2, websocket, gRpc, tcp, udp .... | http/1.1, http/2, gRpc, websocket  |
 | LB      | L3, L4, L7                                        | ㅣL4, L7                            |
+  
 
 * SpringCloud Architecture
 
 ![SpringCloud Architecture](https://github.com/ParkHyeokJin/CodingTestRepo/assets/19565772/e070ec12-cd00-46ef-a818-04333437d990){: width="50%" height="50%"}
 
 * 스프링 클라우드 기술 스택 매핑
-
+  
 | 역할                      | 프로젝트                                     |
 |-------------------------|------------------------------------------|
 | configuration| SpringCloud-Config & Bus                                         |
