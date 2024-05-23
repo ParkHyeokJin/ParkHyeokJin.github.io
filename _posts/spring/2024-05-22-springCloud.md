@@ -23,7 +23,7 @@ comments: true
 어플리케이션에 사이드카로 연결 되어 어플리케이션 관리, 라우팅, 장애, 인증/인가, 모니터링 등 기능을 제공 합니다.
 
 * 서비스 메시
-  ![Service Mesh](https://github.com/ParkHyeokJin/CodingTestRepo/assets/19565772/93aaf7c2-f73c-415b-a056-eb72c3ec281a)
+  ![Service Mesh](https://github.com/ParkHyeokJin/CodingTestRepo/assets/19565772/93aaf7c2-f73c-415b-a056-eb72c3ec281a){: width="50%" height="50%"}
 
 
 * 주요 기능
@@ -35,7 +35,7 @@ comments: true
 
 
 * 다양한 서비스 메시 기술들
-  ![Service Mesh Stack](https://github.com/ParkHyeokJin/CodingTestRepo/assets/19565772/7448f5d9-12a1-4833-a076-4e5ebda6b03b)
+  ![Service Mesh Stack](https://github.com/ParkHyeokJin/CodingTestRepo/assets/19565772/7448f5d9-12a1-4833-a076-4e5ebda6b03b){: width="50%" height="50%"}
 
 ## SpringCloud Project
 
@@ -56,9 +56,10 @@ comments: true
 | 사용 사례   | 	대규모 마이크로서비스, 고성능 요구                              | 	Spring 애플리케이션, 간단한 API Gateway    |
 | 지원 프로토콜 | http/1.1 , http/2, websocket, gRpc, tcp, udp .... | http/1.1, http/2, gRpc, websocket  |
 | LB      | L3, L4, L7                                        | ㅣL4, L7                            |
+
 * SpringCloud Architecture
 
-![SpringCloud Architecture](https://github.com/ParkHyeokJin/CodingTestRepo/assets/19565772/e070ec12-cd00-46ef-a818-04333437d990)
+![SpringCloud Architecture](https://github.com/ParkHyeokJin/CodingTestRepo/assets/19565772/e070ec12-cd00-46ef-a818-04333437d990){: width="50%" height="50%"}
 
 * 스프링 클라우드 기술 스택 매핑
 
