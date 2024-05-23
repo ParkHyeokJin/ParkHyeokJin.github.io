@@ -23,6 +23,7 @@ comments: true
 어플리케이션에 사이드카로 연결 되어 어플리케이션 관리, 라우팅, 장애, 인증/인가, 모니터링 등 기능을 제공 합니다.
 
 * 서비스 메시
+
   ![Service Mesh](https://github.com/ParkHyeokJin/CodingTestRepo/assets/19565772/93aaf7c2-f73c-415b-a056-eb72c3ec281a){: width="50%" height="50%"}
 
 
@@ -34,7 +35,8 @@ comments: true
    * 모니터링 및 추적 : 서비스간 통신을 모니터링 하고 추적 하여 성능 분석 및 오류 분석
 
 
-* 다양한 서비스 메시 기술들
+* 다양한 서비스 메시 기술
+
   ![Service Mesh Stack](https://github.com/ParkHyeokJin/CodingTestRepo/assets/19565772/7448f5d9-12a1-4833-a076-4e5ebda6b03b){: width="50%" height="50%"}
 
 ## SpringCloud Project
@@ -94,7 +96,7 @@ comments: true
 
 * 아키텍처
 
-![](https://github.com/ParkHyeokJin/spring-cloud-sample/assets/19565772/6c47f69e-08cb-46b0-a0f2-517e555ab2ac)
+![](https://github.com/ParkHyeokJin/spring-cloud-sample/assets/19565772/6c47f69e-08cb-46b0-a0f2-517e555ab2ac){: width="50%" height="50%"}
 
 
 
