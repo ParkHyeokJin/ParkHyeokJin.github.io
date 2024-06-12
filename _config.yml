@@ -15,7 +15,6 @@ keep_files:
 plugins:
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-hashtags
 
 # Site settings
 title: HyeokJin blog
