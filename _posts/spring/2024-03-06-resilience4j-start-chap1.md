@@ -7,44 +7,20 @@ category : Spring
 comments: true 
 ---
 
-### Resilience4j 란?
+# Resilience4j 란?
 
-Resilience4j는 자바 언어로 개발된 내결함성 라이브러리입니다. 이 라이브러리는 분산 시스템에서 장애를 처리하고 시스템의 내결함성을 향상시키는 데 사용됩니다.  
-Resilience4j는 일련의 내결함성 패턴을 구현하고, 이러한 패턴을 사용하여 애플리케이션을 더 견고하고 신뢰할 수 있도록 지원합니다.
+Resilience4j는 자바 언어로 개발된 내결함성 라이브러리입니다. 이 라이브러리는 분산 시스템에서 장애를 처리하고 시스템의 내결함성을 향상시키는 데 사용됩니다. Resilience4j는 일련의 내결함성 패턴을 구현하고, 이러한 패턴을 사용하여 애플리케이션을 더 견고하고 신뢰할 수 있도록 지원합니다.
 
-1. __주요 기능 리스트__
-   1. __Circuit Breaker__ : Circuit Breaker 패턴은 서비스 호출을 모니터링하고, 호출 실패 또는 지정된 실패률을 초과할 때 호출을 차단합니다. 이는 서비스의 과부하를 방지하고 시스템 전체의 가용성을 높입니다.
+- **주요 기능 리스트**
+  - **Circuit Breaker** : Circuit Breaker 패턴은 서비스 호출을 모니터링하고, 호출 실패 또는 지정된 실패률을 초과할 때 호출을 차단합니다. 이는 서비스의 과부하를 방지하고 시스템 전체의 가용성을 높입니다.
 
-   2. __Retry__ : Retry 패턴은 재시도를 통해 임시적인 장애를 극복하는 데 사용됩니다. 서비스 호출이 실패하면, 일정 횟수만큼 다시 시도하여 성공할 때까지 시스템의 가용성을 유지합니다.
+  - **Retry** : Retry 패턴은 재시도를 통해 임시적인 장애를 극복하는 데 사용됩니다. 서비스 호출이 실패하면, 일정 횟수만큼 다시 시도하여 성공할 때까지 시스템의 가용성을 유지합니다.
 
-   3. __Rate Limiter__ : Rate Limiter 패턴은 서비스 호출의 빈도를 제한하여 과도한 부하를 방지합니다. 이를 통해 시스템이 처리할 수 있는 양의 요청을 관리하고, 서비스의 가용성을 보호합니다.
+  - **Rate Limiter** : Rate Limiter 패턴은 서비스 호출의 빈도를 제한하여 과도한 부하를 방지합니다. 이를 통해 시스템이 처리할 수 있는 양의 요청을 관리하고, 서비스의 가용성을 보호합니다.
 
-   4. __Bulkhead__ : Bulkhead 패턴은 서비스 호출을 격리하여 하나의 서비스 호출이 다른 호출에 영향을 주지 않도록 합니다. 이는 서비스 간의 의존성을 관리하고 시스템의 견고성을 향상시킵니다.
+  - **Bulkhead** : Bulkhead 패턴은 서비스 호출을 격리하여 하나의 서비스 호출이 다른 호출에 영향을 주지 않도록 합니다. 이는 서비스 간의 의존성을 관리하고 시스템의 견고성을 향상시킵니다.
 
-
-2. __Dependency__
-
-```groovy
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-  implementation "io.github.resilience4j:resilience4j-circuitbreaker:${resilience4jVersion}"
-  implementation "io.github.resilience4j:resilience4j-ratelimiter:${resilience4jVersion}"
-  implementation "io.github.resilience4j:resilience4j-retry:${resilience4jVersion}"
-  implementation "io.github.resilience4j:resilience4j-bulkhead:${resilience4jVersion}"
-  implementation "io.github.resilience4j:resilience4j-cache:${resilience4jVersion}"
-  implementation "io.github.resilience4j:resilience4j-timelimiter:${resilience4jVersion}"
-}
-
-//Add all
-dependencies {
-   implementation "io.github.resilience4j:resilience4j-all:${resilience4jVersion}"
-}
-```
-
-### CircuitBreaker
+# CircuitBreaker
 
 써킷브레이커는 CLOSED, OPEN, HALF_OPEN의 세 가지 일반 상태와 DISABLED 및 FORCED_OPEN의 두 가지 특수 상태를 갖는 유한 상태 머신을 통해 구현 됩니다.
 
@@ -92,12 +68,33 @@ OPEN 상태로 변경 되고 대기 시간이 지난 후에 HALF_OPEN 상태로 
    써킷 브레이커는 원자성이 보장된 요청은 Thread-safe 하며 특정 시점에 하나의 스레드만 윈도우에 기록 하도록 합니다.  
 
 
-### CircuitBreaker Examples
+# CircuitBreaker Examples
 
-1. __CircuitBreakerRegistry__  
+### Dependency
 
-   Resilience4j 는 스레드 안전성을 보장 하는 ConcurrentHashMap 을 기반 으로 CircuitBreaker 인스턴스를  
-관리 할 수 있는 CircuitBreakerRegistry를 제공합니다. 
+```groovy
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  implementation "io.github.resilience4j:resilience4j-circuitbreaker:${resilience4jVersion}"
+  implementation "io.github.resilience4j:resilience4j-ratelimiter:${resilience4jVersion}"
+  implementation "io.github.resilience4j:resilience4j-retry:${resilience4jVersion}"
+  implementation "io.github.resilience4j:resilience4j-bulkhead:${resilience4jVersion}"
+  implementation "io.github.resilience4j:resilience4j-cache:${resilience4jVersion}"
+  implementation "io.github.resilience4j:resilience4j-timelimiter:${resilience4jVersion}"
+}
+
+//Add all
+dependencies {
+   implementation "io.github.resilience4j:resilience4j-all:${resilience4jVersion}"
+}
+```
+
+### CircuitBreakerRegistry  
+
+Resilience4j 는 스레드 안전성을 보장 하는 ConcurrentHashMap 을 기반 으로 CircuitBreaker 인스턴스를 관리 할 수 있는 CircuitBreakerRegistry를 제공합니다. 
 
 ```java
 @Configuration
@@ -129,28 +126,28 @@ public class Resilience4jRegistryConfig {
 }
 ```
 
-2. __CircuitBreakerConfig__
+### CircuitBreakerConfig
 
-| Config property | Default Value | Description                                                                                                                      |
-|-----------------|---------------|----------------------------------------------------------------------------------------------------------------------------------|
-|failureRateThreshold| 50            | 실패율 임계치(%)                                                                                                                       |
-|slowCallRateThreshold| 100           | 지연율 임계치(%)                                                                                                                       |
-|slowCallDurationThreshold| 60000 ms      | 지연 판단 시간(ms)                                                                                                                     |
-|permittedNumberOfCallsInHalfOpenState| 10            | HALF_OPEN 상태일때 체크 하는 요청 개수                                                                                                       |
-|maxWaitDurationInHalfOpenState| 0 ms          | HALF_OPEN 상태에서 요청을 대기하는 최대 시간. <br/> 0ms 는 HALF_OPEN 에서 요청 개수가 들어올때까지 무한정 대기하는 옵션을 말함.                                           |
-|slidingWindowType| COUNT_BASED   | 슬라이딩 윈도우 타입 <br/>[COUNT_BASED, TIME_BASED]                                                                                       |
-|slidingWindowSize| 100           | 슬라이딩 윈도우 사이즈                                                                                                                     |
-|minimumNumberOfCalls| 100           | 서킷브레이커가 체크 할 최소 요청 갯수.  <br/>최소 요청 갯수에 도달하지 않은 경우에는 서킷브레이커가 작동 하지 않음.                                                            |
-|waitDurationInOpenState| 60000 ms      | OPEN 상태에서 HALF_OPEN으로 변경되기전 대기시간.  <br/>해당 시간이 지난후 HALF_OPEN 을 하여 체크 한뒤 결과에 따라 CLOSED & OPEN 상태로 변경 한다.                          |
-|automaticTransitionFromOpenToHalfOpenEnabled| false         | false : OPEN 에서 HALF_OPEN으로 변경 되었을 경우 호출이 들어온 스레드만 상태가 변경됨. 모든 스레드가 상태를 체크 하지 않아도 됨. <br/>true : 모든 스레드가 상태 모니터링을 하여 상태 변경시 적용됨. |
-|recordExceptions| empty         | 실패로 기록 되는 예외                                                                                                                     |
-|ignoreExceptions| empty         | 실패에 무시 되는 예외                                                                                                                     |
-|recordFailurePredicate|  throwable -> true             | 예외가 실패로 기록 되어야 할지 커스텀 옵션. 체크 하여 true 를 반환 하는 경우 실패 카운팅.                                                                          |
-|ignoreExceptionPredicate|  throwable -> false             | 예외가 무시 될지 아닐지 커스텀 옵션. true : 예외 무시, false : 실패 카운팅.                                                                              |
+| Config property                              | Default Value | Description                                                                                                                      |
+|----------------------------------------------|---------------|----------------------------------------------------------------------------------------------------------------------------------|
+| **failureRateThreshold**                       | 50            | 실패율 임계치(%)                                                                                                                       |
+| **slowCallRateThreshold**                        | 100           | 지연율 임계치(%)                                                                                                                       |
+| **slowCallDurationThreshold**                    | 60000 ms      | 지연 판단 시간(ms)                                                                                                                     |
+| **permittedNumberOfCallsInHalfOpenState**        | 10            | HALF_OPEN 상태일때 체크 하는 요청 개수                                                                                                       |
+| **maxWaitDurationInHalfOpenState**               | 0 ms          | HALF_OPEN 상태에서 요청을 대기하는 최대 시간. <br/> 0ms 는 HALF_OPEN 에서 요청 개수가 들어올때까지 무한정 대기하는 옵션을 말함.                                           |
+| **slidingWindowType**                            | COUNT_BASED   | 슬라이딩 윈도우 타입 <br/>[COUNT_BASED, TIME_BASED]                                                                                       |
+| **slidingWindowSize**                            | 100           | 슬라이딩 윈도우 사이즈                                                                                                                     |
+| **minimumNumberOfCalls**                         | 100           | 서킷브레이커가 체크 할 최소 요청 갯수.  <br/>최소 요청 갯수에 도달하지 않은 경우에는 서킷브레이커가 작동 하지 않음.                                                            |
+| **waitDurationInOpenState**                      | 60000 ms      | OPEN 상태에서 HALF_OPEN으로 변경되기전 대기시간.  <br/>해당 시간이 지난후 HALF_OPEN 을 하여 체크 한뒤 결과에 따라 CLOSED & OPEN 상태로 변경 한다.                          |
+| **automaticTransitionFromOpenToHalfOpenEnabled** | false         | false : OPEN 에서 HALF_OPEN으로 변경 되었을 경우 호출이 들어온 스레드만 상태가 변경됨. 모든 스레드가 상태를 체크 하지 않아도 됨. <br/>true : 모든 스레드가 상태 모니터링을 하여 상태 변경시 적용됨. |
+| **recordExceptions**                             | empty         | 실패로 기록 되는 예외                                                                                                                     |
+| **ignoreExceptions**                             | empty         | 실패에 무시 되는 예외                                                                                                                     |
+| **recordFailurePredicate**                       |  throwable -> true             | 예외가 실패로 기록 되어야 할지 커스텀 옵션. 체크 하여 true 를 반환 하는 경우 실패 카운팅.                                                                          |
+| **ignoreExceptionPredicate**                    |  throwable -> false             | 예외가 무시 될지 아닐지 커스텀 옵션. true : 예외 무시, false : 실패 카운팅.                                                                              |
 
 
 
-* Create a Resilience4jConfig
+### Create a Resilience4jConfig
 
 ```java
 @Configuration
@@ -209,9 +206,9 @@ public class Resilience4jConfig {
 }
 ```
 
-### SpringBoot 2 & 3 에서의 사용
+# SpringBoot 2 & 3 에서의 사용
 
-1. __Dependency__
+### Dependency
 
 ```groovy
 dependencies {
@@ -220,7 +217,7 @@ dependencies {
 }
 ```
 
-2. __application.yaml__
+### application.yaml
 
 ```yaml
 # Ex1. default config
@@ -260,6 +257,8 @@ resilience4j.circuitbreaker:
       backendB:
          baseConfig: someShared
 ```
+
+### HelloCircuit.class
 
 ```java
 @Service
