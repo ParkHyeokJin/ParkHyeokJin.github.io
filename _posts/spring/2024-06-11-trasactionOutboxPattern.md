@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 트랜젝션 아웃박스 패턴(Transaction outbox Pattern)
-date:   2024-06-12 10:00:00
+date:   2024-06-11 10:00:00
 categories: Spring
 category : Spring
 comments: true 
