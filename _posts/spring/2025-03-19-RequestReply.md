@@ -1,6 +1,6 @@
 ---
 layout: post
-title: rRpc vs Rest 비교
+title: Request-Reply Pattern Using Kafka (in Enterprise Integration Patterns)
 date:   2024-06-13 10:00:00
 categories: Spring
 category : Spring
