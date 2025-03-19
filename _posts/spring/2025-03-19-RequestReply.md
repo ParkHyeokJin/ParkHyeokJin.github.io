@@ -12,12 +12,10 @@ comments: true
 ## Request-Reply Pattern 이란?
 
 Request-Reply Pattern 은 엔터프라이즈 통합 패턴 중 하나로 비동기적인 요청-응답 처리를 가능 하게 하는 방식 입니다.
-
 일반적인 Request-Response 패턴은 요청을 보내면 즉시 응답을 받지만 Request-Reply 패턴은 응답을 특정 수신 채널을 통해
-
 비동기적으로 처리 할 수 있어 시스템간 결합도를 줄이고 유연성을 높일 수 있는 패턴 입니다.
 
-![Request-Reply Pattern](/img/spring/RequestReply.png){: width="80%" height="80%"}
+![Request-Reply Pattern](/img/spring/RequestReply.png){: width="60%" height="60%"}
 
 * 참조 링크 : https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html
 
@@ -26,11 +24,8 @@ Request-Reply Pattern 은 엔터프라이즈 통합 패턴 중 하나로 비동�
 ## Kafka 를 이용한 Request-Reply 패턴 구현
 
 제가 속해 있는 선불서비스 팀은 이벤트 기반 아키텍처(Event Driven Architecture) 를 적극 활용 하고 있습니다.
-
 다양한 이벤트를 MSK(Amazon Managed Streaming for Apache Kafka) 를 통해 발행하여 가용성과 재활용성을 극대화하는데 노력 하고 있습니다.
-
 일반적인 RestAPI 구조에서 이벤트를 활용 하여 어떻게 비동기 이벤트를 활용 할까 고민 하는 중에 __Spring 에서 제공 하는 ReplyingKafkaTemplate__ 를 발견하여
-
 해당 기능을 POC(Proof of Concept) 하였고 이를 활용하여 다양한 기능에 활용 할 수 있을 것으로 검증하여 이에 대한 내용을 기록 합니다.
 
 ![Request-Reply Architecture](/img/spring/RequestReply-Arch.png){: width="80%" height="80%"}
