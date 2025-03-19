@@ -7,8 +7,6 @@ category : Spring
 comments: true 
 ---
 
-# Request-Reply Pattern Using Kafka (in Enterprise Integration Patterns)
-
 ## Request-Reply Pattern 이란?
 
 Request-Reply Pattern 은 엔터프라이즈 통합 패턴 중 하나로 비동기적인 요청-응답 처리를 가능 하게 하는 방식 입니다.
