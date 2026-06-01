@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 단 65줄로 AI 코딩의 고질병을 고친 CLAUDE.md (Karpathy & Forrest Chang)
-date:   2026-06-02 10:00:00
+date:   2026-06-02 08:00:00
 categories: AI
 category : AI
 comments: true
