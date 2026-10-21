@@ -1,18 +1,28 @@
-<div class="site-category-left">
-    <ul>
-        <li><a class="category-link {% if page.url == '/blog/' %}active{% endif %}" href="{{ site.baseurl }}/blog">All</a></li>
-        {% assign pages_list = site.pages | where: "layout", "category" | sort_natural: "title" %}
-        {% for node in pages_list %}
-            {% if node.title != null %}
-                {% if node.layout == "category" %}
-                    {% if node.title != "New Items" %}
-                    <li>
-                    <a class="category-link {% if page.url == node.url %} active {% endif %}"
-                       href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
-                    </li>
-                    {% endif %}
-                {% endif %}
-            {% endif %}
-        {% endfor %}
+{% assign news_count = site.categories["New Items"] | size %}
+{% assign total_posts = site.posts | size | minus: news_count %}
+{% assign cat_pages = site.pages | where: "layout", "category" | sort_natural: "title" %}
+{% assign cat_total = 0 %}
+<aside class="cat-card" aria-label="카테고리">
+    <div class="cat-header">Categories</div>
+    <ul class="cat-list">
+        <li>
+            <a class="cat-item{% if page.url == '/blog/' %} active{% endif %}" href="{{ site.baseurl }}/blog">
+                <i class="fa fa-th-large cat-icon" aria-hidden="true"></i>
+                <span class="cat-name">All posts</span>
+                <span class="cat-count">{{ total_posts }}</span>
+            </a>
+        </li>
+        {% for node in cat_pages %}{% if node.title and node.title != "New Items" %}
+        {% assign meta = site.data.category_icons[node.title] %}
+        {% assign cat_total = cat_total | plus: 1 %}
+        <li>
+            <a class="cat-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">
+                <i class="fa fa-{{ meta.icon | default: 'folder-o' }} cat-icon" aria-hidden="true"></i>
+                <span class="cat-name">{{ meta.label | default: node.title }}</span>
+                <span class="cat-count">{{ site.categories[node.title] | size }}</span>
+            </a>
+        </li>
+        {% endif %}{% endfor %}
     </ul>
-</div>
+    <div class="cat-footer">{{ total_posts }} posts · {{ cat_total }} categories</div>
+</aside>

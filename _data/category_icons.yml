@@ -1,0 +1,26 @@
+# Sidebar display settings per category title (see _includes/category-left.html)
+AI:
+  icon: lightbulb-o
+Algorithm:
+  icon: code
+Exception:
+  icon: exclamation-circle
+Netty:
+  icon: sitemap
+DevOps:
+  icon: cogs
+Java:
+  icon: coffee
+JPA:
+  icon: database
+kotlin:
+  icon: code
+  label: Kotlin
+k8s:
+  icon: cubes
+  label: Kubernetes
+others:
+  icon: folder-o
+  label: Others
+Spring:
+  icon: leaf
