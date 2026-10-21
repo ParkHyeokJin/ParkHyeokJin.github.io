@@ -17,6 +17,19 @@ layout: page
 						</div>
 						<hr />
 						<div class="post-content">{{ content }}</div>
+
+						{% assign cat_posts = site.categories[page.category] %}
+						{% assign newer = nil %}{% assign older = nil %}
+						{% for p in cat_posts %}{% if p.url == page.url %}
+							{% unless forloop.first %}{% assign newer_idx = forloop.index0 | minus: 1 %}{% assign newer = cat_posts[newer_idx] %}{% endunless %}
+							{% unless forloop.last %}{% assign older = cat_posts[forloop.index] %}{% endunless %}
+						{% endif %}{% endfor %}
+						{% if newer or older %}
+						<nav class="post-nav">
+							{% if older %}<a class="post-nav-prev" href="{{ older.url | prepend: site.baseurl }}"><span class="post-nav-label">&larr; 이전 글</span><span class="post-nav-title">{{ older.title }}</span></a>{% endif %}
+							{% if newer %}<a class="post-nav-next" href="{{ newer.url | prepend: site.baseurl }}"><span class="post-nav-label">다음 글 &rarr;</span><span class="post-nav-title">{{ newer.title }}</span></a>{% endif %}
+						</nav>
+						{% endif %}
 					</div>
 				</div>
 				<!-- .col-md-7 close -->
@@ -50,3 +63,38 @@ layout: page
 <p class="center-text" style="padding: 30px;">
 	<a href="{{ site.baseurl }}/blog">Back to blog</a>
 </p>
+<script>
+	(function () {
+		var content = document.querySelector('.post-content');
+		if (!content) return;
+		var heads = content.querySelectorAll('h1, h2, h3, h4');
+		if (heads.length < 3) return;
+
+		var min = 4;
+		Array.prototype.forEach.call(heads, function (h) { min = Math.min(min, +h.tagName.charAt(1)); });
+
+		var list = document.createElement('ul');
+		var shown = 0;
+		Array.prototype.forEach.call(heads, function (h, i) {
+			if (!h.id) h.id = 'toc-' + i;
+			if (+h.tagName.charAt(1) > min + 1) return;
+			shown++;
+			var li = document.createElement('li');
+			li.className = 'toc-level-' + (+h.tagName.charAt(1) - min);
+			var a = document.createElement('a');
+			a.href = '#' + h.id;
+			a.textContent = h.textContent;
+			li.appendChild(a);
+			list.appendChild(li);
+		});
+
+		var box = document.createElement('details');
+		box.className = 'toc';
+		box.open = shown <= 12;
+		var summary = document.createElement('summary');
+		summary.textContent = '목차';
+		box.appendChild(summary);
+		box.appendChild(list);
+		content.insertBefore(box, content.firstChild);
+	})();
+</script>
