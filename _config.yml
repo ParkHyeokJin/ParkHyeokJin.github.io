@@ -5,6 +5,10 @@ exclude:
   - "CLAUDE.md"
   - "wiki"
   - "*.iml"
+  # not renderable as drafts: stray images, and a Helm article whose {{ }} is parsed as Liquid
+  - "_drafts/img.png"
+  - "_drafts/img_1.png"
+  - "_drafts/2023-12-11-helm-function-chap1.md"
   - "Gemfile"
   - "Gemfile.lock"
   - "README.md"
