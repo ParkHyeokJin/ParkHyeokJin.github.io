@@ -66,3 +66,21 @@
     });
   })();
 </script>
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    var icon = btn.querySelector('i');
+    function sync() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      icon.className = 'fa ' + (dark ? 'fa-sun-o' : 'fa-moon-o');
+    }
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      sync();
+    });
+    sync();
+  })();
+</script>

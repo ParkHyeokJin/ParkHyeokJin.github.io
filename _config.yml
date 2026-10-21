@@ -1,6 +1,10 @@
 
 exclude:
   - "/vendor/"
+  - "AGENTS.md"
+  - "CLAUDE.md"
+  - "wiki"
+  - "*.iml"
   - "Gemfile"
   - "Gemfile.lock"
   - "README.md"

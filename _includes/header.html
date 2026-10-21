@@ -30,6 +30,7 @@
 						<li{% if is_news %} class="active"{% endif %}><a href="{{ site.baseurl }}/news/index">IT News</a></li>
 						<li{% if page.url contains '/contact' %} class="active"{% endif %}><a href="{{ site.baseurl }}/contact">Contact</a></li>
 					</ul>
+					<button type="button" id="theme-toggle" class="theme-toggle navbar-right" aria-label="다크 모드 전환" title="다크 모드 전환"><i class="fa fa-moon-o" aria-hidden="true"></i></button>
 					<form id="search-body" class="navbar-right" role="search" onsubmit="return false">
 						<i class="fa fa-search search-icon" aria-hidden="true"></i>
 						<input type="search" id="search-input" placeholder="글 검색 ( / )" aria-label="글 검색" autocomplete="off" />
