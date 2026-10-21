@@ -15,10 +15,54 @@
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     json: '{{ site.baseurl }}/search.json',
-    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    searchResultTemplate: '<li><a href="{url}"><span class="result-title">{title}</span><span class="result-meta">{category} · {date}</span></a></li>',
     noResultsText: 'No search Posts',
     limit: 10,
     fuzzy: false,
     exclude: ['Welcome']
   });
+</script>
+<script>
+  (function () {
+    var input = document.getElementById('search-input');
+    var results = document.getElementById('results-container');
+    var box = document.getElementById('search-body');
+    if (!input || !results || !box) return;
+
+    function close() { results.innerHTML = ''; }
+
+    document.addEventListener('keydown', function (e) {
+      var tag = document.activeElement && document.activeElement.tagName;
+      if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(tag) && !e.metaKey && !e.ctrlKey) {
+        e.preventDefault();
+        input.focus();
+      }
+    });
+
+    box.addEventListener('keydown', function (e) {
+      var links = Array.prototype.slice.call(results.querySelectorAll('a'));
+      var idx = links.indexOf(document.activeElement);
+      if (e.key === 'Escape') {
+        input.value = '';
+        close();
+        input.focus();
+      } else if (e.key === 'ArrowDown' && links.length) {
+        e.preventDefault();
+        links[Math.min(idx + 1, links.length - 1)].focus();
+      } else if (e.key === 'ArrowUp' && links.length) {
+        e.preventDefault();
+        if (idx <= 0) input.focus(); else links[idx - 1].focus();
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!box.contains(e.target)) close();
+    });
+
+    input.addEventListener('focus', function () {
+      if (input.value && !results.firstChild) {
+        input.dispatchEvent(new KeyboardEvent('keyup', { key: 'a' }));
+      }
+    });
+  })();
 </script>
