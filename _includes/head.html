@@ -1,65 +1,46 @@
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-<meta name="description" content="">
+{% assign meta_title = page.title | default: site.title %}
+{% assign meta_desc = page.description | default: site.description %}
+{% unless page.description %}{% if page.layout == "post" %}{% assign meta_desc = page.content | strip_html | strip_newlines | strip | truncate: 150 %}{% endif %}{% endunless %}
+<title>{{ meta_title }}{% if page.title %} | {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ meta_desc | escape }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ meta_title | escape }}">
+<meta property="og:description" content="{{ meta_desc | escape }}">
+<meta property="og:url" content="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
+<meta name="twitter:card" content="summary">
 
 <!-- CSS -->
-<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.carousel.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/css/font-awesome.min.css" />
-<link rel="stylesheet" href="{{ site.baseurl }}/css/airspace.css" />
-<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
+{% if page.legacy %}
+<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.carousel.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/css/ionicons.min.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/css/animate.css" />
+{% endif %}
+<link rel="stylesheet" href="{{ site.baseurl }}/css/airspace.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/css/responsive.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/css/searchbar.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/css/category.css" />
 <link rel="stylesheet" href="{{ site.baseurl }}/css/category-left.css" />
 
-<!-- Js -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-<script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
-<script src="{{ site.baseurl }}/js/owl.carousel.min.js"></script>
-<script src="{{ site.baseurl }}/js/plugins.js"></script>
-<script src="{{ site.baseurl }}/js/min/waypoints.min.js"></script>
-<script src="{{ site.baseurl }}/js/jquery.counterup.js"></script>
-
-
-<script src="{{ site.baseurl }}/js/main.js"></script>
-
-<!-- jekyll simple search js -->
-<script src="{{site.baseurl}}/js/simple-jekyll-search.min.js"></script>
 <!--
-/*
- * Airspace
- * Ported to Jekyll by Andrew Lee
- * https://github.com/luminousrubyist/airspace-jekyll
- * Designed and Developed by ThemeFisher
- * https://themefisher.com/
- *
- */
+ * Airspace - ported to Jekyll by Andrew Lee (https://github.com/luminousrubyist/airspace-jekyll)
+ * Designed and developed by ThemeFisher (https://themefisher.com/)
 -->
 
-<script data-ad-client="ca-pub-4307985305136957" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4307985305136957" crossorigin="anonymous"></script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4307985305136957",
-    enable_page_level_ads: true
-  });
-</script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148997399-1"></script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N05H2XD68J"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'UA-148997399-1');
+  gtag('config', 'G-N05H2XD68J');
 </script>
