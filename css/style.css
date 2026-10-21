@@ -109,6 +109,13 @@ header.site-header {
   border-bottom: 1px solid #eee;
 }
 
+/* Auto ads can be injected inside <header>; a sticky header would pin the ad on screen. */
+@media (max-width: 767px) {
+  header.site-header {
+    position: static;
+  }
+}
+
 header.site-header .navbar-brand {
   padding-top: 15px;
   font-weight: bold;
