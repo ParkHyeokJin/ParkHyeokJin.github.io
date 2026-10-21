@@ -76,3 +76,5 @@ html[data-theme="dark"] body #contact-form,
 html[data-theme="dark"] body #contact-box { background: transparent; }
 html[data-theme="dark"] body #contact-box .block h2 { color: #eee; }
 html[data-theme="dark"] body #contact-box .block p { color: #bbb; }
+html[data-theme="dark"] body .skill-group-title { color: #777; }
+html[data-theme="dark"] body .skill-list li { background: #1b1d22; border-color: #2a2d34; color: #ddd; }

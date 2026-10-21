@@ -249,3 +249,45 @@ header.site-header .dropdown-menu > .active > a {
     flex-direction: column;
   }
 }
+
+/*********************/
+/* SKILLS */
+/*********************/
+#service .section-title {
+  margin-bottom: 30px;
+  padding-left: 15px;
+  text-align: left;
+}
+
+.skills {
+  text-align: left;
+  display: grid;
+  gap: 22px;
+  padding-bottom: 40px;
+}
+
+.skill-group-title {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-list li {
+  padding: 6px 14px;
+  background: #f4f5f7;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #333;
+}
