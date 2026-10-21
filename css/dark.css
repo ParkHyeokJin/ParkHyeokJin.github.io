@@ -27,12 +27,9 @@ html[data-theme="dark"] body:not(.legacy) #results-container { background: #1e1e
 html[data-theme="dark"] body:not(.legacy) #results-container li a { color: #ddd; }
 html[data-theme="dark"] body:not(.legacy) #results-container li a:hover,
 html[data-theme="dark"] body:not(.legacy) #results-container li a:focus { background: #2a2a2a; }
-html[data-theme="dark"] body:not(.legacy) .site-category,
-html[data-theme="dark"] body:not(.legacy) .site-category-left { background: #181818; border-color: #2a2a2a; }
-html[data-theme="dark"] body:not(.legacy) .site-category li a,
-html[data-theme="dark"] body:not(.legacy) .site-category-left li a { color: #ccc; }
-html[data-theme="dark"] body:not(.legacy) .site-category li a:hover,
-html[data-theme="dark"] body:not(.legacy) .site-category-left li a:hover { background: #333; color: #fff; }
+html[data-theme="dark"] body:not(.legacy) .site-category { background: #181818; border-color: #2a2a2a; }
+html[data-theme="dark"] body:not(.legacy) .site-category li a { color: #ccc; }
+html[data-theme="dark"] body:not(.legacy) .site-category li a:hover { background: #333; color: #fff; }
 html[data-theme="dark"] body:not(.legacy) .post-area { background: #121212; border-bottom-color: #2e2e2e; }
 html[data-theme="dark"] body:not(.legacy) .post-area a:link,
 html[data-theme="dark"] body:not(.legacy) .post-area a:visited { color: #e6e6e6; }
@@ -60,3 +57,11 @@ html[data-theme="dark"] body:not(.legacy) footer .footer-manu ul li a { color: #
 html[data-theme="dark"] body:not(.legacy) p, html[data-theme="dark"] body:not(.legacy) li { color: inherit; }
 html[data-theme="dark"] body:not(.legacy) #intro .block p,
 html[data-theme="dark"] body:not(.legacy) #intro .block li { color: inherit; }
+html[data-theme="dark"] body:not(.legacy) .site-category-left { border-left-color: #2a2a2a; }
+html[data-theme="dark"] body:not(.legacy) .site-category-left li a { color: #aaa; }
+html[data-theme="dark"] body:not(.legacy) .site-category-left li a:hover { background: #222; color: #fff; }
+html[data-theme="dark"] body:not(.legacy) .site-category-left li a.active { border-left-color: #ccc; color: #fff; }
+@media (max-width: 767px) {
+  html[data-theme="dark"] body:not(.legacy) .site-category-left li a { border-color: #3a3a3a; }
+  html[data-theme="dark"] body:not(.legacy) .site-category-left li a.active { background: #ddd; border-color: #ddd; color: #111; }
+}
