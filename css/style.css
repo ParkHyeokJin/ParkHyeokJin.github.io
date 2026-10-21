@@ -244,10 +244,6 @@ header.site-header .dropdown-menu > .active > a {
   cursor: pointer;
 }
 
-.legacy .theme-toggle {
-  display: none;
-}
-
 @media (max-width: 767px) {
   .post-nav {
     flex-direction: column;

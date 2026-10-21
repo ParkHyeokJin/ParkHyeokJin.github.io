@@ -1,16 +1,22 @@
-<div class="site-category-left">
-    <ul>
-        <li><a href="{{ site.baseurl }}/news">All</a></li>
-        {% assign pages_list = site.pages %}
-        {% for node in pages_list %}
-            {% if node.title != null %}
-                {% if node.layout == "category" %}
-                    {% if node.title == "New Items" %}
-                    <li><a class="category-link {% if page.url == node.url %} active {% endif %}"
-                           href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
-                    {% endif %}
-                {% endif %}
-            {% endif %}
-        {% endfor %}
+{% assign news_count = site.categories["New Items"] | size %}
+<aside class="cat-card" aria-label="카테고리">
+    <div class="cat-header">IT News</div>
+    <ul class="cat-list">
+        <li>
+            <a class="cat-item{% if page.url == '/news/' %} active{% endif %}" href="{{ site.baseurl }}/news">
+                <i class="fa fa-th-large cat-icon" aria-hidden="true"></i>
+                <span class="cat-name">All</span>
+                <span class="cat-count">{{ news_count }}</span>
+            </a>
+        </li>
+        {% for node in site.pages %}{% if node.layout == "category" and node.title == "New Items" %}
+        <li>
+            <a class="cat-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">
+                <i class="fa fa-newspaper-o cat-icon" aria-hidden="true"></i>
+                <span class="cat-name">{{ node.title }}</span>
+                <span class="cat-count">{{ news_count }}</span>
+            </a>
+        </li>
+        {% endif %}{% endfor %}
     </ul>
-</div>
+</aside>
