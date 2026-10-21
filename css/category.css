@@ -10,7 +10,7 @@
   }
 
   .site-category ul{
-  //background: rgb(109,109,109);
+  /*background: rgb(109,109,109); */
   height:50px;
   list-style:none;
   line-height: 1.5;
@@ -25,7 +25,6 @@
   }
 
   .site-category li a{
-  background: $brand-color;
   display:block;
   font-weight:normal;
   line-height:50px;

@@ -10,7 +10,7 @@
   }
 
   .site-category-left ul{
-  //background: rgb(109,109,109);
+  /*background: rgb(109,109,109); */
   height:50px;
   list-style:none;
   line-height: 1.5;
@@ -20,17 +20,16 @@
   }
 
   .site-category-left li{
-  //float: left;
+  /*float: left; */
   display:inline;
   }
 
   .site-category-left li a{
-  background: $brand-color;
   display:block;
   font-weight:normal;
   line-height:50px;
   margin:0px;
- // padding:0px 25px;
+ /* padding:0px 25px; */
   text-align:center;
   text-decoration:none;
   color:#000000;

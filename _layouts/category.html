@@ -7,35 +7,23 @@ layout: default
 <div class="container">
     {% assign category = page.category | default : page.title %}
     <div class="row">
-        <div class="col-xs-3">
+        <div class="col-sm-3">
             {% if category != "New Items" %}
                 {% include category-left.html %}
             {% elsif category == "New Items" %}
                 {% include itNews-leftMenu.html %}
             {% endif %}
         </div>
-        <div class="col-xs-9">
+        <div class="col-sm-9">
             {% for post in site.categories[category] %}
             <div class="post-area">
                 <a href="{{ post.url | prepend: site.baseurl }}" class="bold">{{ post.title }}</a>
                 <p class="post-date">{{ post.date | date_to_long_string }}</p>
                 <p>
-                    {{ post.content | strip_html | truncatewords: 50 }}
+                    {{ post.description | default: post.content | strip_html | truncatewords: 50 }}
                 </p>
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
-<script type="text/javascript">
-  SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '/search.json',
-    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-    noResultsText: 'No search Posts',
-    limit: 10,
-    fuzzy: false,
-    exclude: ['Welcome']
-  });
-</script>
